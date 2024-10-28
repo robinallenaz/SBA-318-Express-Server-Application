@@ -1,5 +1,7 @@
 const express = require("express");
 
+const errorHandler = require('./errorHandler');
+
 const app = express();
 
 //Custom middleware
@@ -7,6 +9,9 @@ const app = express();
 app.use(middleware.loggerMiddleware);
 
 app.use('/api', middleware.authMiddleware);
+
+//Error handling middleware
+app.use(errorHandler);
 
 const port = 3000;
 
