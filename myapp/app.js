@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 const usersRouter = require("../routes/users.js");
-const postsRouter = require("../routes/bookPosts.js");
+// const postsRouter = require("../routes/bookPosts.js");
 const path = require("path");
 
 // Middleware
@@ -77,7 +77,7 @@ app.use("/api", (req, res, next) => {
 
 //Router Set Up
 app.use("/api/users", usersRouter);
-app.use("/api/posts", postsRouter);
+// app.use("/api/posts", postsRouter);
 
 // New User form
 app.get("/users/new", (req, res) => {
