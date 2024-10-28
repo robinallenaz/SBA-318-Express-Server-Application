@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 const usersRouter = require("../routes/users.js");
-const postsRouter = require("../routes/posts.js");
+const postsRouter = require("../routes/bookPosts.js");
 const path = require("path");
 
 // Middleware

@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/Users');
 
 //Express.js route handler that retrieves a user by ID and returns the user data as JSON
 exports.getUser = async (req, res) => {

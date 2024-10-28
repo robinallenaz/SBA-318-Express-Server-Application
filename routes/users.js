@@ -1,8 +1,7 @@
-
 const express = require("express");
 const router = express.Router();
-const users = require("../data/users.js");
-const error = require("../utilities/error.js");
+const users = require("../models/Users.js");
+const error = require("../myapp/middleware.js");
 
 // BASE PATH FOR THIS ROUTER IS: /api/users
 
@@ -106,7 +105,6 @@ router.delete("/:id", (req, res, next) => {
 });
 
 module.exports = router;
-
 
 // router.post("/", async (req, res) => {
 //   const user = new User(req.body);
