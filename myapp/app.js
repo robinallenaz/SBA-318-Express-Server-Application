@@ -6,6 +6,12 @@ const { User, Post, Comment } = require('./models');
 
 const app = express();
 
+// Setting up EJS as the view engine
+app.set('view engine', 'ejs');
+
+// Setting the directory for your views
+app.set('views', './views/');
+
 //Custom middleware
 
 app.use(middleware.loggerMiddleware);
