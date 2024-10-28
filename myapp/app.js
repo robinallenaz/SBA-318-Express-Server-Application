@@ -2,6 +2,8 @@ const express = require("express");
 
 const errorHandler = require('./errorHandler');
 
+const { User, Post, Comment } = require('./models');
+
 const app = express();
 
 //Custom middleware
