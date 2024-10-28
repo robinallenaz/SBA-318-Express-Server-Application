@@ -12,3 +12,5 @@ router.get('/:id', async (req, res) => {
     const post = await postController.getPostById(postId);
     res.json(post);
   });
+
+  
