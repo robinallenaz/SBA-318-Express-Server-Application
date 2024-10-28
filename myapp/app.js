@@ -2,6 +2,12 @@ const express = require("express");
 
 const app = express();
 
+//Custom middleware
+
+app.use(middleware.loggerMiddleware);
+
+app.use('/api', middleware.authMiddleware);
+
 const port = 3000;
 
 app.get("/", (req, res) => {
