@@ -26,14 +26,9 @@ After setting up the .env file and installing the dependencies, you can run the 
 ```bash
 npm run dev
 ```
-Enjoy coding!
 
 
-
-
-# Project Checklist
-
-## Requirements
+# Requirements from Rubric
 | Requirement                                                                                                                         | Weight |
 |-------------------------------------------------------------------------------------------------------------------------------------|--------|
 | Create and use at least two pieces of custom middleware.                                                                            | 5%     |
