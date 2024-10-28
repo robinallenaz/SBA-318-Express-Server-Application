@@ -1,22 +1,22 @@
 const express = require("express");
 
-const errorHandler = require('./errorHandler');
+const errorHandler = require("./errorHandler");
 
-const { User, Post, Comment } = require('./models');
+const { User, Post, Comment } = require("./models");
 
 const app = express();
 
 // Setting up EJS as the view engine
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 // Setting the directory for your views
-app.set('views', './views/');
+app.set("views", "../views");
 
 //Custom middleware
 
 app.use(middleware.loggerMiddleware);
 
-app.use('/api', middleware.authMiddleware);
+app.use("/api", middleware.authMiddleware);
 
 //Error handling middleware
 app.use(errorHandler);
