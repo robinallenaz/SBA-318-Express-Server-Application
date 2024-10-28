@@ -1,10 +1,18 @@
 //Create a new exchange request
 
 exports.createExchangeRequest = async (req, res) => {
-    const exchangeData = req.body;
-    const exchange = new Exchange(exchangeData);
-    await exchange.save();
-    res.json(exchange);
+    try {
+      const exchangeData = req.body;
+      if (!exchangeData || !exchangeData.user || !exchangeData.book) {
+        return res.status(400).json({ message: 'Invalid request data' });
+      }
+      const exchange = new Exchange(exchangeData);
+      await exchange.save();
+      res.json(exchange);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
   };
 
 //Get all exchange requests
