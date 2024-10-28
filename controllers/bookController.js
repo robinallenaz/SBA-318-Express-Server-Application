@@ -15,9 +15,17 @@ exports.getBooks = async (req, res) => {
 
 //Get a single book by ID
 exports.getBookById = async (req, res) => {
-    const bookId = req.params.id;
-    const book = await Book.findById(bookId);
-    res.json(book);
+    try {
+      const bookId = req.params.id;
+      const book = await Book.findById(bookId);
+      if (!book) {
+        return res.status(404).json({ message: 'Book not found' });
+      }
+      res.json(book);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
   };
 
 //Update a book
